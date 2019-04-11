@@ -35,7 +35,8 @@ public class WebViewActivity extends Activity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
-                if (tried == false) {
+                String web_url = webView.getUrl();
+                if (web_url.equals("https://industry.socs.binus.ac.id/learning-plan/auth/login")) {
                     tried = true;
                     logged_in = true;
                     super.onPageFinished(view, url);
@@ -55,8 +56,7 @@ public class WebViewActivity extends Activity {
                     } else {
                         view.loadUrl(js);
                     }
-                }
-                if(logged_in==true){
+                } else if (web_url.equals("https://industry.socs.binus.ac.id/learning-plan/student/log-book/insert")) {
                     super.onPageFinished(view, url);
 
                     final String js = "javascript:" +
@@ -75,6 +75,9 @@ public class WebViewActivity extends Activity {
                     } else {
                         view.loadUrl(js);
                     }
+                } else if (web_url.contains("https://industry.socs.binus.ac.id/learning-plan/")) {
+                    String URL = "https://industry.socs.binus.ac.id/learning-plan/student/log-book/insert";
+                    webView.loadUrl(URL);
                 }
             }
 
