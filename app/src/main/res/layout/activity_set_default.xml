@@ -1,100 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/usernameS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Username"
+                android:inputType="number"/>
 
-    <Button
-        android:id="@+id/Save"
-        android:layout_width="182dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="125dp"
-        android:text="SAVE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+            <EditText
+                android:id="@+id/passwordS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Password"
+                android:layout_below="@id/usernameS"
+                android:inputType="textPassword"/>
 
-    <EditText
-        android:id="@+id/usernameS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/clock_inS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Clock In"
+                android:inputType="time"
+                android:layout_below="@id/passwordS"/>
 
-    <EditText
-        android:id="@+id/passwordS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/clock_inS"
-        app:layout_constraintStart_toStartOf="@+id/clock_inS"
-        app:layout_constraintTop_toBottomOf="@+id/usernameS" />
+            <EditText
+                android:id="@+id/clock_outS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Clock Out"
+                android:inputType="time"
+                android:layout_below="@id/clock_inS"/>
 
-    <EditText
-        android:id="@+id/clock_inS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="67dp"
-        android:ems="10"
-        android:hint="Clock In"
-        android:inputType="time"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordS" />
+            <EditText
+                android:id="@+id/activityS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Activity"
+                android:inputType="textPersonName"
+                android:layout_below="@id/clock_outS"/>
 
-    <EditText
-        android:id="@+id/clock_outS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Clock Out"
-        android:inputType="time"
-        app:layout_constraintStart_toStartOf="@+id/clock_inS"
-        app:layout_constraintTop_toBottomOf="@+id/clock_inS" />
+            <EditText
+                android:id="@+id/descriptionS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Description"
+                android:inputType="textPersonName"
+                android:layout_below="@id/activityS"/>
 
-    <EditText
-        android:id="@+id/activityS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:ems="10"
-        android:hint="Activity"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/clock_outS"
-        app:layout_constraintTop_toBottomOf="@+id/clock_outS" />
-
-    <EditText
-        android:id="@+id/descriptionS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/activityS"
-        app:layout_constraintTop_toBottomOf="@+id/activityS" />
-
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="36dp"
+                android:text="Save"
+                android:layout_below="@id/descriptionS"/>
+        </RelativeLayout>
+    </ScrollView>
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Uwaaa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
