@@ -21,8 +21,6 @@ public class WebViewActivity extends Activity {
         Intent intent = getIntent();
         final String username = intent.getStringExtra("username");
         final String password = intent.getStringExtra("password");
-        Log.i("username",username);
-        Log.i("password",password);
         final String clock_in = intent.getStringExtra("clock_in");
         final String clock_out = intent.getStringExtra("clock_out");
         final String activity = intent.getStringExtra("activity");
