@@ -4,86 +4,133 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#eee">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/username"
+            <RelativeLayout
+                android:id="@+id/layout1"
+                android:background="@drawable/card_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:hint="Username"
-                android:inputType="number"/>
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                android:hint="Password"
-                android:layout_below="@id/username"
-                android:inputType="textPassword"/>
+                android:paddingTop="32dp">
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Username"
+                    android:inputType="number"/>
 
-            <EditText
-                android:id="@+id/clock_in"
-                android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Password"
+                    android:layout_below="@id/username"
+                    android:inputType="textPassword"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/AccountHeader"
+                android:text="Account"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:hint="Clock In"
-                android:inputType="time"
-                android:layout_below="@id/Option"/>
-
-            <EditText
-                android:id="@+id/clock_out"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:hint="Clock Out"
-                android:inputType="time"
-                android:layout_below="@id/clock_in"/>
-
-            <EditText
-                android:id="@+id/activity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:hint="Activity"
-                android:inputType="textPersonName"
-                android:layout_below="@id/clock_out"/>
-
-            <EditText
-                android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:hint="Description"
-                android:inputType="textPersonName"
-                android:layout_below="@id/activity"/>
+                style="@style/TitleStyle"
+                android:layout_marginTop="16dp"
+                android:layout_alignStart="@id/layout1"
+                android:layout_alignLeft="@id/layout1" />
 
             <Button
                 android:id="@+id/Option"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
                 android:text="Set Default"
-                android:layout_below="@id/password"/>
+                android:layout_below="@id/layout1"/>
 
+            <RelativeLayout
+                android:id="@+id/layout2"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingTop="32dp"
+                android:background="@drawable/card_background"
+                android:layout_below="@id/Option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/clock_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Clock In"
+                    android:inputType="time"
+                    android:layout_below="@id/Option"/>
+
+                <EditText
+                    android:id="@+id/clock_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Clock Out"
+                    android:inputType="time"
+                    android:layout_below="@id/clock_in"/>
+
+                <EditText
+                    android:id="@+id/activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Activity"
+                    android:inputType="textPersonName"
+                    android:layout_below="@id/clock_out"/>
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Description"
+                    android:inputType="textPersonName"
+                    android:layout_below="@id/activity"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ActivityHeader"
+                android:text="Activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TitleStyle"
+                android:layout_above="@id/layout2"
+                android:layout_marginBottom="-20dp"
+                android:layout_alignStart="@id/layout2"
+                android:layout_alignLeft="@id/layout2" />
             <Button
                 android:id="@+id/GOB"
                 android:layout_width="match_parent"
@@ -92,7 +139,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="36dp"
                 android:text="GO"
-                android:layout_below="@id/description"/>
+                android:layout_below="@id/layout2"/>
         </RelativeLayout>
     </ScrollView>
     <TextView
