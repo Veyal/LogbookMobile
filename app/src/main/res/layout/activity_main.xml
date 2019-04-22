@@ -20,28 +20,49 @@
                 android:layout_marginTop="36dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="32dp"
                 android:paddingTop="32dp">
-                <EditText
-                    android:id="@+id/username"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/UsernameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:hint="Username"
-                    android:inputType="number"/>
-
-                <EditText
-                    android:id="@+id/password"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/username"
+                        android:hint="NIM"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/PasswordLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:hint="Password"
-                    android:layout_below="@id/username"
-                    android:inputType="textPassword"/>
+                    app:passwordToggleEnabled="true"
+                    android:layout_below="@id/UsernameLayout">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"/>
+                </android.support.design.widget.TextInputLayout>
+                <Button
+                    android:id="@+id/Option"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_below="@id/PasswordLayout"
+                    android:text="Set Default"/>
             </RelativeLayout>
             <TextView
                 android:id="@+id/AccountHeader"
@@ -53,18 +74,6 @@
                 android:layout_alignStart="@id/layout1"
                 android:layout_alignLeft="@id/layout1" />
 
-            <Button
-                android:id="@+id/Option"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="Set Default"
-                android:layout_below="@id/layout1"/>
-
             <RelativeLayout
                 android:id="@+id/layout2"
                 android:layout_marginLeft="16dp"
@@ -72,53 +81,68 @@
                 android:layout_marginBottom="16dp"
                 android:paddingTop="32dp"
                 android:background="@drawable/card_background"
-                android:layout_below="@id/Option"
+                android:layout_below="@id/layout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/clock_in"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ClockInLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:hint="Clock In"
-                    android:inputType="time"
-                    android:layout_below="@id/Option"/>
-
-                <EditText
-                    android:id="@+id/clock_out"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/clock_in"
+                        android:hint="Clock In"
+                        android:inputType="time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ClockOutLayout"
+                    android:layout_below="@id/ClockInLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:hint="Clock Out"
-                    android:inputType="time"
-                    android:layout_below="@id/clock_in"/>
-
-                <EditText
-                    android:id="@+id/activity"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/clock_out"
+                        android:hint="Clock Out"
+                        android:inputType="time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ActivityLayout"
+                    android:layout_below="@id/ClockOutLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:hint="Activity"
-                    android:inputType="textPersonName"
-                    android:layout_below="@id/clock_out"/>
-
-                <EditText
-                    android:id="@+id/description"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/activity"
+                        android:hint="Activity"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/DescriptionLayout"
+                    android:layout_below="@id/ActivityLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    android:hint="Description"
-                    android:inputType="textPersonName"
-                    android:layout_below="@id/activity"/>
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/description"
+                        android:hint="Description"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </android.support.design.widget.TextInputLayout>
             </RelativeLayout>
 
             <TextView
@@ -131,17 +155,17 @@
                 android:layout_marginBottom="-20dp"
                 android:layout_alignStart="@id/layout2"
                 android:layout_alignLeft="@id/layout2" />
-            <Button
-                android:id="@+id/GOB"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="36dp"
-                android:text="GO"
-                android:layout_below="@id/layout2"/>
         </RelativeLayout>
     </ScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/GOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fab_send"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:layout_alignParentRight="true" />
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

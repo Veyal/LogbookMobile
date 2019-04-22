@@ -2,6 +2,7 @@ package com.example.logbookmobile;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Description = findViewById(R.id.description);
         initText();
 
-        Button GOB = findViewById(R.id.GOB);
+        FloatingActionButton GOB = findViewById(R.id.GOB);
         GOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
